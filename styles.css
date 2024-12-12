@@ -26,8 +26,8 @@ body {
 
 .tree-way-switch {
     position: absolute;
-    width: 69px;
-    height: 69px;
+    width: 10px;
+    height: 40px;
 }
 
 #rate-knob {
