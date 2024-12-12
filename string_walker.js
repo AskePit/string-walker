@@ -3,6 +3,7 @@ const pedalTypeSwitchDiv = document.getElementById('pedal-type-switch');
 const modeKnobDiv = document.getElementById('mode-knob');
 const rateKnobDiv = document.getElementById('rate-knob');
 const depthKnobDiv = document.getElementById('depth-knob');
+const pedalCover = document.getElementById('pedal-cover');
 
 let soundNodes = []
 let guitarEffectsChain = []
@@ -72,12 +73,16 @@ let pedalType = VIBRATO;
 pedalTypeSwitchDiv.onclick = () => {
     if (pedalType == VIBRATO) {
         pedalType = CHORUS
+        pedalCover.src = 'img/chorus_pedal.jpg'
     } else if (pedalType == CHORUS) {
         pedalType = TREMOLO
+        pedalCover.src = 'img/tremolo_pedal.jpg'
     } else if (pedalType == TREMOLO) {
         pedalType = VIBRATO
+        pedalCover.src = 'img/vibrato_pedal.jpg'
     }
-    pedalTypeSwitchDiv.innerHTML = pedalType
+
+    applySampleEffects()
 }
 
 function lfo(sampleNumber, sampleRate, lfoType, frequency, depth) {
